@@ -17,15 +17,15 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const [collapsed, setCollapsed] = useState(false);
 
   const links = [
-    { href: "#", icon: Home, label: "Rent" },
-    { href: "#", icon: ShoppingBag, label: "Buy" },
-    { href: "#", icon: Search, label: "Find an Agent" },
-    { href: "#", icon: HandCoins, label: "Deposit" },
+    { href: "/rent/", icon: Home, label: "Rent" },
+    { href: "/sell/", icon: ShoppingBag, label: "Sell" },
+    { href: "/findagent/", icon: Search, label: "Find an Agent" },
+    { href: "/deposit/", icon: HandCoins, label: "Deposit" },
   ];
 
   const bottomLinks = [
-    { href: "#", icon: Settings, label: "Settings" },
-    { href: "#", icon: UserPlus, label: "Apply for Agent" },
+    { href: "/settings/", icon: Settings, label: "Settings" },
+    { href: "/applyforagent/", icon: UserPlus, label: "Apply for Agent" },
   ];
 
   const spanClassName = 'p-[3px]';
@@ -38,7 +38,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         collapsed ? "w-20" : "w-64"
       )}>
         <div className="flex items-center justify-between p-4">
-          {!collapsed && <h1 className="text-lg font-bold">Dashboard</h1>}
+          {!collapsed && <h1 className="text-lg font-bold"><Link href='/dashboard/'>Dashboard</Link></h1>}
           <button onClick={() => setCollapsed(!collapsed)} className="text-gray-500">
             <Menu />
           </button>
